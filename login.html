@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login Page</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- GLOBAL VARIABLES (Necessary for colors) --- */
+        :root {
+            --primary-color: #007bff; /* Blue */
+            --secondary-color: #0056b3; 
+            --text-color-light: #cccccc;
+            --text-color-dark: white;
+            --section-bg: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            --border-color: cyan;
+        }
+
+        /* --- BASE PAGE STYLES --- */
+        body {
+            /* Background gradient for the portfolio theme */
+            background: linear-gradient(cyan, #000000, #003366);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            font-family: 'Poppins', sans-serif;
+            color: white; 
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 35% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 25% 50%; }
+        }
+
+        /* --- BUTTON BASE STYLES --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: black;
+            padding: 0.75rem 1.875rem;
+            text-decoration: none;
+            border-radius: 0.3125rem;
+            font-weight: 600;
+            margin-top: 0.5rem; /* Reduced top margin here */
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- LOGIN FORM STYLES --- */
+        
+        /* The main container styling to give the box look */
+        .auth-container {
+            padding: 3rem; 
+            max-width: 25rem; 
+            width: 100%;
+            text-align: center;
+            background-color: var(--section-bg);
+            border: 2px solid var(--primary-color);
+            border-radius: 0.75rem;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.4); 
+            margin: 2rem; /* Add margin for spacing */
+        }
+
+        .auth-container h2 {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--text-color-dark);
+        }
+
+        /* Styles the arrangement of inputs and buttons */
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Styles the input fields (Email and Password) */
+        .auth-form input {
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            background-color: #1a1a1a; 
+            color: var(--text-color-dark);
+            font-size: 1rem;
+        }
+
+        /* Focus effect when the user clicks inside an input */
+        .auth-form input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        /* Styles for the "Sign Up here" link paragraph */
+        .auth-container p {
+            margin-top: 1rem;
+            color: var(--text-color-light); 
+        }
+
+        /* Styles for the anchor tag link */
+        .auth-container p a {
+            color: var(--primary-color) !important; 
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .auth-container p a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+    </head>
+
+<body> 
+    <section id="login">
+        <div class="auth-container">
+            <h2>User Login</h2>
+            <form action="#" method="POST" class="auth-form">
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn">Log In</button>
+                <p style="color: white; font-size: 0.9rem;">
+                    Don't have an account? 
+                    <a href="#" style="color: var(--primary-color); text-decoration: none;">Sign Up here</a>
+                </p>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
